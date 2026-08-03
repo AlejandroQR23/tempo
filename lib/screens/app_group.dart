@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tempo/models/tracked_app_group.dart';
+import 'package:tempo/theme/app_theme.dart';
 import 'package:tempo/widgets/app_group_dialog_form.dart';
 
 class AppGroup extends StatefulWidget {
@@ -68,6 +69,11 @@ class _AppGroupState extends State<AppGroup> {
                         final group = _appGroups[index];
                         return Card(
                           key: ValueKey(group.id),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(
+                              AppTheme.listRowCardRadius,
+                            ),
+                          ),
                           child: ListTile(
                             title: Text(group.name),
                             subtitle: Text(group.apps.join(', ')),

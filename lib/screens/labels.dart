@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tempo/models/label.dart';
+import 'package:tempo/theme/app_theme.dart';
 import 'package:tempo/widgets/labels_dialog_form.dart';
 
 class Labels extends StatefulWidget {
@@ -65,6 +66,11 @@ class _LabelsState extends State<Labels> {
                         final label = _labels[index];
                         return Card(
                           key: ValueKey(label.id),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(
+                              AppTheme.listRowCardRadius,
+                            ),
+                          ),
                           child: ListTile(
                             title: Text(label.name),
                             trailing: Row(
